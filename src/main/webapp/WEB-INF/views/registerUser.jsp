@@ -47,7 +47,7 @@
         </div>
 
         <div class="form-group">
-            <label for="surname">Email</label>
+            <label for="surname">Sur Name</label>
             <form:input path="userInformation.surname" id="surname" class="form-Control"/>
         </div>
 
