@@ -19,7 +19,7 @@ import java.util.List;
 
 
 @Controller
-@RequestMapping("/rest/cart")
+@RequestMapping("/resources")
 public class RideoutResources {
 
     @Autowired
@@ -40,7 +40,7 @@ public class RideoutResources {
 //        return registerRideoutService.getRegistrationById(cartId);
 //    }
 
-    @RequestMapping(value = "/add/{rideoutId}", method = RequestMethod.PUT)
+    @RequestMapping(value = "/add/{rideoutId}")
     public String addItem (@PathVariable(value ="rideoutId") int rideoutId, @AuthenticationPrincipal User activeUser) {
 
         Customer customer = customerService.getCustomerByUsername(activeUser.getUsername());
@@ -61,7 +61,7 @@ public class RideoutResources {
         return "redirect:/customer/cart";
     }
 
-    @RequestMapping(value = "/remove/{rideoutId}", method = RequestMethod.PUT)
+    @RequestMapping(value = "/remove/{rideoutId}")
     public String removeItem (@PathVariable(value = "rideoutId") int rideoutId) {
         RideoutItem rideoutItem = rideoutItemService.getRideoutItemByRideoutId(rideoutId);
         rideoutItemService.removeRideoutItem(rideoutItem);

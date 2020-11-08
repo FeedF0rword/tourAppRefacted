@@ -1,7 +1,9 @@
 package com.tourApp.controller;
 
 import com.tourApp.model.Customer;
+import com.tourApp.model.RideoutCart;
 import com.tourApp.service.CustomerService;
+import com.tourApp.service.RegisterRideoutService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.web.bind.annotation.AuthenticationPrincipal;
@@ -17,6 +19,9 @@ public class RideoutRegistrationController {
     @Autowired
     private CustomerService customerService;
 
+    @Autowired
+    private RegisterRideoutService registerRideoutService;
+
     @RequestMapping
     public String getRegistrations(@AuthenticationPrincipal User activeUser){
         Customer customer = customerService.getCustomerByUsername (activeUser.getUsername());
@@ -27,7 +32,8 @@ public class RideoutRegistrationController {
 
     @RequestMapping("/{cartId}")
     public String getRideoutsRedirect(@PathVariable (value = "cartId") int cartId, Model model) {
-        model.addAttribute("cartId", cartId);
+        RideoutCart rideoutCart = registerRideoutService.getRegistrationById(cartId);
+        model.addAttribute("registrations" , rideoutCart);
 
         return "cart";
     }

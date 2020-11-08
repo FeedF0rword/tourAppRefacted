@@ -11,7 +11,8 @@
                 </div>
             </div>
         </section>
-
+        ${registrations.customer.userInformation.firstname}
+        ${registrations.customer.userInformation.surname}
         <section class="container">
             <table class="table table-hover">
                 <tr>
@@ -21,22 +22,20 @@
                     <th>Ride Leader</th>
                     <th>Action</th>
                 </tr>
-                <c:forEach items="${registrations.rideouts}" var="rideout">
+                <c:forEach items="${registrations.cartItems}" var="rideout">
                     <tr>
-                        <td>${rideout.rideoutTitle}</td>
-                        <td>${rideout.maxRiders}</td>
-                        <td>${rideout.startDate}</td>
-                        <td>${rideout.rideLeader}</td>
+                        <td>${rideout.product.rideoutTitle}</td>
+                        <td>${rideout.product.maxRiders}</td>
+                        <td>${rideout.product.startDate}</td>
+                        <td>${rideout.product.rideLeader}</td>
                         <td>
-                            <a href="<spring:url value="/rideout/viewRideout/${rideout.rideoutId}" />"
+                            <a href="<spring:url value="/rideout/viewRideout/${rideout.product.rideoutId}" />"
                                class="label label-success">
                                 <span class="glyphicon glyphicon-info-sign"></span>view</a>
 
-
-                            <a href="<spring:url value="/resources/remove/${rideout.rideoutId}" />"
+                            <a href="<spring:url value="/resources/remove/${rideout.product.rideoutId}" />"
                                class="label label-danger">
                                 <span class="glyphicon glyphicon-remove"></span>remove</a>
-
 
                         </td>
                     </tr>
