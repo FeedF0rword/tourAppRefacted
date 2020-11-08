@@ -8,7 +8,7 @@
         <div class="page-header">
             <h1>All Products</h1>
 
-            <p class="lead">Checkout all the awesome products available now!</p>
+            <p class="lead">Checkout all the awesome rideouts available now!</p>
         </div>
 
         <table class="table table-striped table-hover">

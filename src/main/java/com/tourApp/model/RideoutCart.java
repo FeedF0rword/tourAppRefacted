@@ -7,7 +7,7 @@ import java.io.Serializable;
 import java.util.List;
 
 @Entity
-public class Cart implements Serializable {
+public class RideoutCart implements Serializable {
 
     private static final long serialVersionUID = 3940548625296145582L;
 
@@ -15,8 +15,8 @@ public class Cart implements Serializable {
     @GeneratedValue
     private int cartId;
 
-    @OneToMany(mappedBy = "cart", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private List<CartItem> cartItems;
+    @OneToMany(mappedBy = "rideoutCart", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private List<RideoutItem> rideoutItems;
 
     @OneToOne
     @JoinColumn(name = "customerId")
@@ -32,12 +32,12 @@ public class Cart implements Serializable {
         this.cartId = cartId;
     }
 
-    public List<CartItem> getCartItems() {
-        return cartItems;
+    public List<RideoutItem> getCartItems() {
+        return rideoutItems;
     }
 
-    public void setCartItems(List<CartItem> cartItems) {
-        this.cartItems = cartItems;
+    public void setCartItems(List<RideoutItem> rideoutItems) {
+        this.rideoutItems = rideoutItems;
     }
 
     public Customer getCustomer() {

@@ -2,7 +2,7 @@ package com.tourApp.dao.impl;
 
 import com.tourApp.dao.CustomerDao;
 import com.tourApp.model.Authorities;
-import com.tourApp.model.Cart;
+import com.tourApp.model.RideoutCart;
 import com.tourApp.model.Customer;
 import com.tourApp.model.Users;
 import org.hibernate.Query;
@@ -38,11 +38,11 @@ public class CustomerDaoImpl implements CustomerDao{
         session.saveOrUpdate(newUser);
         session.saveOrUpdate(newAuthority);
 
-        Cart newCart = new Cart();
-        newCart.setCustomer(customer);
-        customer.setCart(newCart);
+        RideoutCart newRideoutCart = new RideoutCart();
+        newRideoutCart.setCustomer(customer);
+        customer.setCart(newRideoutCart);
         session.saveOrUpdate(customer);
-        session.saveOrUpdate(newCart);
+        session.saveOrUpdate(newRideoutCart);
 
         session.flush();
     }

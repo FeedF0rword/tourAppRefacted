@@ -1,11 +1,11 @@
 package com.tourApp.service;
 
-import com.tourApp.model.Cart;
+import com.tourApp.model.RideoutCart;
 
 
 public interface RegisterRideoutService {
 
-    Cart getRegistrationById(int cartId);
+    RideoutCart getRegistrationById(int cartId);
 
-    void update(Cart cart);
+    void update(RideoutCart rideoutCart);
 }

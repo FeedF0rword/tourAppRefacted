@@ -1,7 +1,7 @@
 package com.tourApp.dao.impl;
 
 import com.tourApp.dao.RideoutDao;
-import com.tourApp.model.Product;
+import com.tourApp.model.Rideout;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -18,38 +18,38 @@ public class RideoutDaoImpl implements RideoutDao {
     @Autowired
     private SessionFactory sessionFactory;
 
-    public Product getRideoutById(int id) {
+    public Rideout getRideoutById(int id) {
         Session session = sessionFactory.getCurrentSession();
-        Product product = (Product) session.get(Product.class, id);
+        Rideout rideout = (Rideout) session.get(Rideout.class, id);
         session.flush();
 
-        return product;
+        return rideout;
     }
 
-    public List<Product> getRideoutsList() {
+    public List<Rideout> getRideoutsList() {
         Session session = sessionFactory.getCurrentSession();
-        Query query = session.createQuery("from Product");
-        List<Product> productList = query.list();
+        Query query = session.createQuery("from Rideout");
+        List<Rideout> rideoutList = query.list();
         session.flush();
 
-        return productList;
+        return rideoutList;
     }
 
-    public void addRideout(Product product) {
+    public void addRideout(Rideout rideout) {
         Session session = sessionFactory.getCurrentSession();
-        session.saveOrUpdate(product);
-        session.flush();
-    }
-
-    public void editRideout(Product product) {
-        Session session = sessionFactory.getCurrentSession();
-        session.saveOrUpdate(product);
+        session.saveOrUpdate(rideout);
         session.flush();
     }
 
-    public void deleteRideout(Product product) {
+    public void editRideout(Rideout rideout) {
         Session session = sessionFactory.getCurrentSession();
-        session.delete(product);
+        session.saveOrUpdate(rideout);
+        session.flush();
+    }
+
+    public void deleteRideout(Rideout rideout) {
+        Session session = sessionFactory.getCurrentSession();
+        session.delete(rideout);
         session.flush();
     }
 }

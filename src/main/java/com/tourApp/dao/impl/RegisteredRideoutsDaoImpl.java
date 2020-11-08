@@ -1,7 +1,7 @@
 package com.tourApp.dao.impl;
 
 import com.tourApp.dao.RegisteredRideoutsDao;
-import com.tourApp.model.Cart;
+import com.tourApp.model.RideoutCart;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,13 +15,11 @@ public class RegisteredRideoutsDaoImpl implements RegisteredRideoutsDao {
     @Autowired
     private SessionFactory sessionFactory;
 
-    public Cart getRegistrations(int cartId) {
+    public RideoutCart getRegistrations(int cartId) {
         Session session = sessionFactory.getCurrentSession();
-        return (Cart) session.get(Cart.class, cartId);
+        return (RideoutCart) session.get(RideoutCart.class, cartId);
     }
 
-    public void update(Cart cart) {
-        int cartId = cart.getCartId();
-        // to do later
+    public void update(RideoutCart rideoutCart) {
     }
 }

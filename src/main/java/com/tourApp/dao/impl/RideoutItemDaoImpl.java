@@ -1,8 +1,8 @@
 package com.tourApp.dao.impl;
 
 import com.tourApp.dao.RideoutItemDao;
-import com.tourApp.model.Cart;
-import com.tourApp.model.CartItem;
+import com.tourApp.model.RideoutCart;
+import com.tourApp.model.RideoutItem;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -19,32 +19,32 @@ public class RideoutItemDaoImpl implements RideoutItemDao {
     @Autowired
     private SessionFactory sessionFactory;
 
-    public void addRideoutItem(CartItem cartItem) {
+    public void addRideoutItem(RideoutItem rideoutItem) {
         Session session = sessionFactory.getCurrentSession();
-        session.saveOrUpdate(cartItem);
+        session.saveOrUpdate(rideoutItem);
         session.flush();
     }
 
-    public void removeRideoutItem(CartItem cartItem) {
+    public void removeRideoutItem(RideoutItem rideoutItem) {
         Session session = sessionFactory.getCurrentSession();
-        session.delete(cartItem);
+        session.delete(rideoutItem);
         session.flush();
     }
 
-    public void removeAllRideoutItems(Cart cart) {
-        List<CartItem> cartItems = cart.getCartItems();
+    public void removeAllRideoutItems(RideoutCart rideoutCart) {
+        List<RideoutItem> rideoutItems = rideoutCart.getCartItems();
 
-        for (CartItem item : cartItems) {
+        for (RideoutItem item : rideoutItems) {
             removeRideoutItem(item);
         }
     }
 
-    public CartItem getRideoutItemByRideoutId(int productId) {
+    public RideoutItem getRideoutItemByRideoutId(int productId) {
         Session session = sessionFactory.getCurrentSession();
-        Query query = session.createQuery("from CartItem where rideoutId = ?");
+        Query query = session.createQuery("from RideoutItem where rideoutId = ?");
         query.setInteger(0, productId);
         session.flush();
 
-        return (CartItem) query.uniqueResult();
+        return (RideoutItem) query.uniqueResult();
     }
 }

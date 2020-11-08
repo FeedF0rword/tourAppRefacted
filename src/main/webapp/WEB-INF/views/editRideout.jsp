@@ -7,7 +7,7 @@
         <div class="page-header">
             <h1>Edit Product</h1>
 
-            <p class="lead">Please update the product information here:</p>
+            <p class="lead">Please update the rideout information here:</p>
         </div>
 
         <form:form action="${pageContext.request.contextPath}/admin/rideout/editRideout" method="post"

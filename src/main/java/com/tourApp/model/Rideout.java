@@ -2,17 +2,15 @@ package com.tourApp.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.validator.constraints.NotEmpty;
-import org.springframework.web.multipart.MultipartFile;
 
 import javax.persistence.*;
 import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
 import java.io.Serializable;
 import java.util.List;
 
 
 @Entity
-public class Product implements Serializable{
+public class Rideout implements Serializable{
 
     private static final long serialVersionUID = -3532377236419382983L;
 
@@ -37,9 +35,9 @@ public class Product implements Serializable{
     private String rideoutItineary;
 
 
-    @OneToMany(mappedBy = "product", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "rideout", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JsonIgnore
-    private List<CartItem> cartItemList;
+    private List<RideoutItem> rideoutItemList;
 
     public int getRideoutId() {
         return rideoutId;
@@ -105,12 +103,12 @@ public class Product implements Serializable{
         this.rideoutStatus = productStatus;
     }
 
-
-    public List<CartItem> getCartItemList() {
-        return cartItemList;
+    public List<RideoutItem> getRideoutItemList() {
+        return rideoutItemList;
     }
 
-    public void setCartItemList(List<CartItem> cartItemList) {
-        this.cartItemList = cartItemList;
+    public void setRideoutItemList(List<RideoutItem> rideoutItemList) {
+        this.rideoutItemList = rideoutItemList;
     }
+
 }

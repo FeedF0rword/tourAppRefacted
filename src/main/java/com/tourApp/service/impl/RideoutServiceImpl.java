@@ -1,7 +1,7 @@
 package com.tourApp.service.impl;
 
 import com.tourApp.dao.RideoutDao;
-import com.tourApp.model.Product;
+import com.tourApp.model.Rideout;
 import com.tourApp.service.RideoutService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,23 +14,23 @@ public class RideoutServiceImpl implements RideoutService {
     @Autowired
     private RideoutDao rideoutDao;
 
-    public Product getRideoutById(int productId) {
-        return rideoutDao.getRideoutById(productId);
+    public Rideout getRideoutById(int rideoutId) {
+        return rideoutDao.getRideoutById(rideoutId);
     }
 
-    public List<Product> getRideoutList() {
+    public List<Rideout> getRideoutList() {
         return rideoutDao.getRideoutsList();
     }
 
-    public void addRideout(Product product) {
-        rideoutDao.addRideout(product);
+    public void addRideout(Rideout rideout) {
+        rideoutDao.addRideout(rideout);
     }
 
-    public void editRideout(Product product) {
-        rideoutDao.editRideout(product);
+    public void editRideout(Rideout rideout) {
+        rideoutDao.editRideout(rideout);
     }
 
-    public void deleteRideout(Product product) {
-        rideoutDao.deleteRideout(product);
+    public void deleteRideout(Rideout rideout) {
+        rideoutDao.deleteRideout(rideout);
     }
 }

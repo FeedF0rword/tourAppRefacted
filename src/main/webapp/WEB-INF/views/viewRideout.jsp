@@ -16,7 +16,7 @@
                 <div class="col-md-5">
                     <p>
                         <h4>Rideout Itinerary</h4>
-                        ${product.rideoutItineary}
+                        ${rideout.rideoutItineary}
                     </p>
                 </div>
 
@@ -47,10 +47,10 @@
                     <p ng-controller="cartCtrl">
                         <a href="<c:url value="/" />" class="btn btn-default">Back</a>
                         <c:if test="${pageContext.request.isUserInRole('ROLE_USER')}">
-                            <a href="#" class="btn btn-warning btn-large"
-                               ng-click="addToCart('${rideout.rideoutId}')"><span
-                                    class="glyphicon glyphicon-shopping-cart"></span>Register
-                                Now</a>
+                            <a href="<spring:url value="/resources/add/${rideout.rideoutId}" />"
+                               class="btn btn-success btn-large">
+                                <span class="glyphicon glyphicon-shopping-rideoutRegistration"></span>
+                                Register Now</a>
                             <a href="<spring:url value="/customer/cart" />"
                                class="btn btn-default">
                                 <span class="glyphicon glyphicon-hand-right"></span>View Registed Rideouts</a>

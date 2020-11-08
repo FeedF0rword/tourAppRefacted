@@ -1,6 +1,6 @@
 package com.tourApp.controller.admin;
 
-import com.tourApp.model.Product;
+import com.tourApp.model.Rideout;
 import com.tourApp.service.RideoutService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -23,15 +23,15 @@ public class AdminRideout {
 
     @RequestMapping("/rideout/addRideout")
     public String addRideout(Model model) {
-        Product product = new Product();
-        product.setRideoutStatus("PLANNING");
-        model.addAttribute("rideout", product);
+        Rideout rideout = new Rideout();
+        rideout.setRideoutStatus("PLANNING");
+        model.addAttribute("rideout", rideout);
 
         return "addRideout";
     }
 
     @RequestMapping(value="/rideout/addRideout", method = RequestMethod.POST)
-    public String addRideoutPost(@Valid @ModelAttribute("rideout") Product rideout, BindingResult result,
+    public String addRideoutPost(@Valid @ModelAttribute("rideout") Rideout rideout, BindingResult result,
                                  HttpServletRequest request) {
         if(result.hasErrors()) {
             return "addRideout";
@@ -44,16 +44,16 @@ public class AdminRideout {
 
     @RequestMapping("/rideout/editRideout/{id}")
     public String editRideout(@PathVariable("id") int id, Model model) {
-        Product product = rideoutService.getRideoutById(id);
+        Rideout rideout = rideoutService.getRideoutById(id);
 
-        model.addAttribute("rideout", product);
+        model.addAttribute("rideout", rideout);
 
         return "editRideout";
     }
 
     @RequestMapping(value="/rideout/editRideout", method = RequestMethod.POST)
-    public String editRideoutPost(@Valid @ModelAttribute("rideout") Product rideout, BindingResult result,
-                                 HttpServletRequest request) {
+    public String editRideoutPost(@Valid @ModelAttribute("rideout") Rideout rideout, BindingResult result,
+                                  HttpServletRequest request) {
         if(result.hasErrors()) {
             return "editRideout";
         }
@@ -65,8 +65,8 @@ public class AdminRideout {
     @RequestMapping("/rideout/deleteRideout/{id}")
     public String deleteRideout(@PathVariable int id, Model model, HttpServletRequest request) {
 
-        Product product = rideoutService.getRideoutById(id);
-        rideoutService.deleteRideout(product);
+        Rideout rideout = rideoutService.getRideoutById(id);
+        rideoutService.deleteRideout(rideout);
 
         return "redirect:/admin/rideoutInventory";
     }

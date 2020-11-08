@@ -12,13 +12,7 @@
             </div>
         </section>
 
-        <section class="container" ng-app="cartApp">
-            <div ng-controller = "cartCtrl" ng-init="initCartId('${cartId}')">
-            <div>
-                <a class="btn btn-danger pull-left" ng-click="clearCart()"><span
-                        class="glyphicon glyphicon-remove-sign"></span>Remove all registrations</a>
-            </div>
-
+        <section class="container">
             <table class="table table-hover">
                 <tr>
                     <th>Rideout Title</th>
@@ -27,23 +21,33 @@
                     <th>Ride Leader</th>
                     <th>Action</th>
                 </tr>
-                <tr ng-repeat = "item in cart.cartItems">
-                    <td>{{item.product.rideoutTitle}}</td>
-                    <td>{{item.product.maxRiders}}</td>
-                    <td>{{item.product.startDate}}</td>
-                    <td>{{item.product.rideLeader}}</td>
-                    <td><a href="#" class="label label-danger" ng-click="removeFromCart(item.product.rideoutId)">
-                        <span class="glyphicon glyphicon-remove"></span>remove</a></td>
-                </tr>
-            </table>
+                <c:forEach items="${registrations.rideouts}" var="rideout">
+                    <tr>
+                        <td>${rideout.rideoutTitle}</td>
+                        <td>${rideout.maxRiders}</td>
+                        <td>${rideout.startDate}</td>
+                        <td>${rideout.rideLeader}</td>
+                        <td>
+                            <a href="<spring:url value="/rideout/viewRideout/${rideout.rideoutId}" />"
+                               class="label label-success">
+                                <span class="glyphicon glyphicon-info-sign"></span>view</a>
 
+
+                            <a href="<spring:url value="/resources/remove/${rideout.rideoutId}" />"
+                               class="label label-danger">
+                                <span class="glyphicon glyphicon-remove"></span>remove</a>
+
+
+                        </td>
+                    </tr>
+                </c:forEach>
+            </table>
             <a href="<spring:url value="/" />" class="btn btn-default">Go Back to Home</a>
-            </div>
         </section>
 
     </div>
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.1/angular.min.js"></script>
-<script src="<c:url value="/resources/js/controller.js" /> "></script>
+<%--<script src="<c:url value="/resources/js/controller.js" /> "></script>--%>
 <%@include file="/WEB-INF/views/template/footer.jsp" %>

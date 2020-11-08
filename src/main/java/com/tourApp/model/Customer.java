@@ -34,7 +34,7 @@ public class Customer implements Serializable{
     @OneToOne
     @JoinColumn(name = "cartId")
     @JsonIgnore
-    private Cart cart;
+    private RideoutCart rideoutCart;
 
     public int getCustomerId() {
         return customerId;
@@ -92,11 +92,11 @@ public class Customer implements Serializable{
         this.userInformation = userInformation;
     }
 
-    public Cart getCart() {
-        return cart;
+    public RideoutCart getCart() {
+        return rideoutCart;
     }
 
-    public void setCart(Cart cart) {
-        this.cart = cart;
+    public void setCart(RideoutCart rideoutCart) {
+        this.rideoutCart = rideoutCart;
     }
 }

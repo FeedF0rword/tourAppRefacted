@@ -1,10 +1,10 @@
 package com.tourApp.dao;
 
-import com.tourApp.model.Cart;
+import com.tourApp.model.RideoutCart;
 
 public interface RegisteredRideoutsDao {
 
-    Cart getRegistrations(int cartId);
+    RideoutCart getRegistrations(int cartId);
 
-    void update(Cart cart);
+    void update(RideoutCart rideoutCart);
 }

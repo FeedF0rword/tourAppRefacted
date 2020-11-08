@@ -1,18 +1,18 @@
 package com.tourApp.dao;
 
-import com.tourApp.model.Product;
+import com.tourApp.model.Rideout;
 
 import java.util.List;
 
 public interface RideoutDao {
 
-    List<Product> getRideoutsList();
+    List<Rideout> getRideoutsList();
 
-    Product getRideoutById(int id);
+    Rideout getRideoutById(int id);
 
-    void addRideout(Product product);
+    void addRideout(Rideout rideout);
 
-    void editRideout(Product product);
+    void editRideout(Rideout rideout);
 
-    void deleteRideout(Product product);
+    void deleteRideout(Rideout rideout);
 }

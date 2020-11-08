@@ -1,9 +1,9 @@
 package com.tourApp.controller;
 
-import com.tourApp.model.Cart;
-import com.tourApp.model.CartItem;
+import com.tourApp.model.RideoutCart;
+import com.tourApp.model.Rideout;
+import com.tourApp.model.RideoutItem;
 import com.tourApp.model.Customer;
-import com.tourApp.model.Product;
 import com.tourApp.service.RideoutItemService;
 import com.tourApp.service.RegisterRideoutService;
 import com.tourApp.service.CustomerService;
@@ -34,46 +34,46 @@ public class RideoutResources {
     @Autowired
     private RideoutService rideoutService;
 
-    @RequestMapping("/{cartId}")
-    public @ResponseBody
-    Cart getCartById (@PathVariable(value = "cartId") int cartId) {
-        return registerRideoutService.getRegistrationById(cartId);
-    }
+//    @RequestMapping("/{cartId}")
+//    public @ResponseBody
+//    RideoutCart getCartById (@PathVariable(value = "cartId") int cartId) {
+//        return registerRideoutService.getRegistrationById(cartId);
+//    }
 
     @RequestMapping(value = "/add/{rideoutId}", method = RequestMethod.PUT)
-    @ResponseStatus(value = HttpStatus.NO_CONTENT)
-    public void addItem (@PathVariable(value ="rideoutId") int rideoutId, @AuthenticationPrincipal User activeUser) {
+    public String addItem (@PathVariable(value ="rideoutId") int rideoutId, @AuthenticationPrincipal User activeUser) {
 
         Customer customer = customerService.getCustomerByUsername(activeUser.getUsername());
-        Cart cart = customer.getCart();
-        Product product = rideoutService.getRideoutById(rideoutId);
-        List<CartItem> cartItems = cart.getCartItems();
+        RideoutCart rideoutCart = customer.getCart();
+        Rideout rideout = rideoutService.getRideoutById(rideoutId);
+        List<RideoutItem> rideoutItems = rideoutCart.getCartItems();
 
-        for (int i=0; i<cartItems.size(); i++) {
-            if(product.getRideoutId()==cartItems.get(i).getProduct().getRideoutId()){
-                return;
+        for (int i = 0; i< rideoutItems.size(); i++) {
+            if(rideout.getRideoutId()== rideoutItems.get(i).getProduct().getRideoutId()){
+                return "redirect:/customer/cart";
             }
         }
 
-        CartItem cartItem = new CartItem();
-        cartItem.setProduct(product);
-        cartItem.setCart(cart);
-        rideoutItemService.addRideoutItem(cartItem);
+        RideoutItem rideoutItem = new RideoutItem();
+        rideoutItem.setProduct(rideout);
+        rideoutItem.setCart(rideoutCart);
+        rideoutItemService.addRideoutItem(rideoutItem);
+        return "redirect:/customer/cart";
     }
 
     @RequestMapping(value = "/remove/{rideoutId}", method = RequestMethod.PUT)
-    @ResponseStatus(value = HttpStatus.NO_CONTENT)
-    public void removeItem (@PathVariable(value = "rideoutId") int rideoutId) {
-        CartItem cartItem = rideoutItemService.getRideoutItemByRideoutId(rideoutId);
-        rideoutItemService.removeRideoutItem(cartItem);
+    public String removeItem (@PathVariable(value = "rideoutId") int rideoutId) {
+        RideoutItem rideoutItem = rideoutItemService.getRideoutItemByRideoutId(rideoutId);
+        rideoutItemService.removeRideoutItem(rideoutItem);
+        return "redirect:/customer/cart";
 
     }
 
     @RequestMapping(value = "/{cartId}", method = RequestMethod.DELETE)
     @ResponseStatus(value = HttpStatus.NO_CONTENT)
     public void clearCart(@PathVariable(value = "cartId") int cartId) {
-        Cart cart = registerRideoutService.getRegistrationById(cartId);
-        rideoutItemService.removeAllRegisteredRideouts(cart);
+        RideoutCart rideoutCart = registerRideoutService.getRegistrationById(cartId);
+        rideoutItemService.removeAllRegisteredRideouts(rideoutCart);
     }
 
     @ExceptionHandler(IllegalArgumentException.class)

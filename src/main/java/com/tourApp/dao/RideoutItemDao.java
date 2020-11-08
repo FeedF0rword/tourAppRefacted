@@ -1,16 +1,16 @@
 package com.tourApp.dao;
 
-import com.tourApp.model.Cart;
-import com.tourApp.model.CartItem;
+import com.tourApp.model.RideoutCart;
+import com.tourApp.model.RideoutItem;
 
 public interface RideoutItemDao {
 
-    void addRideoutItem(CartItem cartItem);
+    void addRideoutItem(RideoutItem rideoutItem);
 
-    void removeRideoutItem(CartItem cartItem);
+    void removeRideoutItem(RideoutItem rideoutItem);
 
-    void removeAllRideoutItems(Cart cart);
+    void removeAllRideoutItems(RideoutCart rideoutCart);
 
-    CartItem getRideoutItemByRideoutId(int productId);
+    RideoutItem getRideoutItemByRideoutId(int productId);
 
 }

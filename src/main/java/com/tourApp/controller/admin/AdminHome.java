@@ -1,7 +1,7 @@
 package com.tourApp.controller.admin;
 
 import com.tourApp.model.Customer;
-import com.tourApp.model.Product;
+import com.tourApp.model.Rideout;
 import com.tourApp.service.CustomerService;
 import com.tourApp.service.RideoutService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,8 +28,8 @@ public class AdminHome {
 
     @RequestMapping("/rideoutInventory")
     public String rideoutInventory(Model model) {
-        List<Product> products = rideoutService.getRideoutList();
-        model.addAttribute("rideouts", products);
+        List<Rideout> rideouts = rideoutService.getRideoutList();
+        model.addAttribute("rideouts", rideouts);
 
         return "rideoutsInventory";
     }

@@ -1,15 +1,15 @@
 package com.tourApp.service;
 
-import com.tourApp.model.Cart;
-import com.tourApp.model.CartItem;
+import com.tourApp.model.RideoutCart;
+import com.tourApp.model.RideoutItem;
 
 public interface RideoutItemService {
 
-    void addRideoutItem(CartItem cartItem);
+    void addRideoutItem(RideoutItem rideoutItem);
 
-    void removeRideoutItem(CartItem cartItem);
+    void removeRideoutItem(RideoutItem rideoutItem);
 
-    void removeAllRegisteredRideouts(Cart cart);
+    void removeAllRegisteredRideouts(RideoutCart rideoutCart);
 
-    CartItem getRideoutItemByRideoutId(int productId);
+    RideoutItem getRideoutItemByRideoutId(int rideoutId);
 }

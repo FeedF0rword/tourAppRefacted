@@ -1,6 +1,6 @@
 package com.tourApp.controller;
 
-import com.tourApp.model.Product;
+import com.tourApp.model.Rideout;
 import com.tourApp.service.RideoutService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -19,16 +19,16 @@ public class RideoutController {
 
     @RequestMapping("/rideoutList")
     public String getProducts(Model model) {
-        List<Product> products = rideoutService.getRideoutList();
-        model.addAttribute("rideouts", products);
+        List<Rideout> rideouts = rideoutService.getRideoutList();
+        model.addAttribute("rideouts", rideouts);
 
         return "rideoutList";
     }
 
     @RequestMapping("/viewRideout/{rideoutId}")
     public String viewProduct(@PathVariable int rideoutId, Model model) throws IOException {
-        Product product= rideoutService.getRideoutById(rideoutId);
-        model.addAttribute("rideout", product);
+        Rideout rideout = rideoutService.getRideoutById(rideoutId);
+        model.addAttribute("rideout", rideout);
 
         return "viewRideout";
     }

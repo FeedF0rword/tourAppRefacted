@@ -6,7 +6,7 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
-public class CartItem implements Serializable{
+public class RideoutItem implements Serializable{
 
     private static final long serialVersionUID = -904360230041854157L;
 
@@ -17,11 +17,11 @@ public class CartItem implements Serializable{
     @ManyToOne
     @JoinColumn(name = "cartId")
     @JsonIgnore
-    private Cart cart;
+    private RideoutCart rideoutCart;
 
     @ManyToOne
     @JoinColumn(name = "rideoutId")
-    private Product product;
+    private Rideout rideout;
 
 
     public int getCartItemId() {
@@ -32,20 +32,20 @@ public class CartItem implements Serializable{
         this.cartItemId = cartItemId;
     }
 
-    public Cart getCart() {
-        return cart;
+    public RideoutCart getCart() {
+        return rideoutCart;
     }
 
-    public void setCart(Cart cart) {
-        this.cart = cart;
+    public void setCart(RideoutCart rideoutCart) {
+        this.rideoutCart = rideoutCart;
     }
 
-    public Product getProduct() {
-        return product;
+    public Rideout getProduct() {
+        return rideout;
     }
 
-    public void setProduct(Product product) {
-        this.product = product;
+    public void setProduct(Rideout rideout) {
+        this.rideout = rideout;
     }
 
 }

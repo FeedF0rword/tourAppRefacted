@@ -1,18 +1,18 @@
 package com.tourApp.service;
 
-import com.tourApp.model.Product;
+import com.tourApp.model.Rideout;
 
 import java.util.List;
 
 public interface RideoutService {
 
-    List<Product> getRideoutList();
+    List<Rideout> getRideoutList();
 
-    Product getRideoutById(int id);
+    Rideout getRideoutById(int id);
 
-    void addRideout(Product product);
+    void addRideout(Rideout rideout);
 
-    void editRideout(Product product);
+    void editRideout(Rideout rideout);
 
-    void deleteRideout(Product product);
+    void deleteRideout(Rideout rideout);
 }

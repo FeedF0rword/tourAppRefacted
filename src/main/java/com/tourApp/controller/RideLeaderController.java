@@ -1,7 +1,7 @@
 package com.tourApp.controller;
 
 import com.tourApp.model.Customer;
-import com.tourApp.model.Product;
+import com.tourApp.model.Rideout;
 import com.tourApp.service.CustomerService;
 import com.tourApp.service.RideoutService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,8 +35,8 @@ public class RideLeaderController {
 
     @RequestMapping("/rideoutInventory")
     public String rideoutInventory(Model model) {
-        List<Product> products = rideoutService.getRideoutList();
-        model.addAttribute("rideouts", products);
+        List<Rideout> rideouts = rideoutService.getRideoutList();
+        model.addAttribute("rideouts", rideouts);
 
         return "rideoutsInventory";
     }
@@ -57,14 +57,14 @@ public class RideLeaderController {
 
     @RequestMapping("/rideout/editRideout/{id}")
     public String editRideout(@PathVariable("id") int id, Model model) {
-        Product product = rideoutService.getRideoutById(id);
-        model.addAttribute("rideout", product);
+        Rideout rideout = rideoutService.getRideoutById(id);
+        model.addAttribute("rideout", rideout);
 
         return "editRideout";
     }
 
     @RequestMapping(value="/rideout/editRideout", method = RequestMethod.POST)
-    public String editRideoutPost(@Valid @ModelAttribute("rideout") Product rideout, BindingResult result,
+    public String editRideoutPost(@Valid @ModelAttribute("rideout") Rideout rideout, BindingResult result,
                                   HttpServletRequest request) {
         if(result.hasErrors()) {
             return "editRideout";
