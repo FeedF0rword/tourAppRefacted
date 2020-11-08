@@ -1,0 +1,537 @@
+body {
+    font-family: 'Varela Round', sans-serif;
+    color: #999;
+	background: #f3f3f3;
+}
+.form-control {
+	box-shadow: none;		
+	font-weight: normal;
+	font-size: 13px;
+}
+.navbar {
+	background: #fff;
+	padding-left: 16px;
+	padding-right: 16px;
+	border-bottom: 1px solid #dfe3e8;
+	border-radius: 0;
+}
+.nav-link img {
+	border-radius: 50%;
+	width: 36px;
+	height: 36px;
+	margin: -8px 0;
+	float: left;
+	margin-right: 10px;
+}
+.navbar .navbar-brand {
+	padding-left: 0;
+	font-size: 20px;
+	padding-right: 50px;
+}
+.navbar .navbar-brand b {
+	color: #33cabb;		
+}
+.navbar .form-inline {
+	display: inline-block;
+}
+.navbar a {
+	color: #888;
+	font-size: 15px;
+}
+.search-box {
+	position: relative;
+}	
+.search-box input {
+	padding-right: 35px;
+	border-color: #dfe3e8;
+	border-radius: 4px !important;
+	box-shadow: none
+}
+.search-box .input-group-text {
+	min-width: 35px;
+	border: none;
+	background: transparent;
+	position: absolute;
+	right: 0;
+	z-index: 9;
+	padding: 7px;
+	height: 100%;
+}
+.search-box i {
+	color: #a0a5b1;
+	font-size: 19px;
+}
+.navbar .sign-up-btn {
+	min-width: 110px;
+	max-height: 36px;
+}
+.navbar .dropdown-menu {
+	color: #999;
+	font-weight: normal;
+	border-radius: 1px;
+	border-color: #e5e5e5;
+	box-shadow: 0 2px 8px rgba(0,0,0,.05);
+}
+.navbar a, .navbar a:active {
+	color: #888;
+	padding: 8px 20px;
+	background: transparent;
+	line-height: normal;
+}
+.navbar .navbar-form {
+	border: none;
+}
+.navbar .action-form {
+	width: 280px;
+	padding: 20px;
+	left: auto;
+	right: 0;
+	font-size: 14px;
+}
+.navbar .action-form a {		
+	color: #33cabb;
+	padding: 0 !important;
+	font-size: 14px;
+}
+.navbar .action-form .hint-text {
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 13px;
+}
+.navbar .btn-primary, .navbar .btn-primary:active {
+	color: #fff;
+	background: #33cabb !important;
+	border: none;
+}	
+.navbar .btn-primary:hover, .navbar .btn-primary:focus {		
+	color: #fff;
+	background: #31bfb1 !important;
+}
+.navbar .social-btn .btn, .navbar .social-btn .btn:hover {
+	color: #fff;
+	margin: 0;
+	padding: 0 !important;
+	font-size: 13px;
+	border: none;
+	transition: all 0.4s;
+	text-align: center;
+	line-height: 34px;
+	width: 47%;
+	text-decoration: none;
+}
+.navbar .social-btn .facebook-btn {
+	background: #507cc0;
+}
+.navbar .social-btn .facebook-btn:hover {
+	background: #4676bd;
+}
+.navbar .social-btn .twitter-btn {
+	background: #64ccf1;
+}
+.navbar .social-btn .twitter-btn:hover {
+	background: #4ec7ef;
+}
+.navbar .social-btn .btn i {
+	margin-right: 5px;
+	font-size: 16px;
+	position: relative;
+	top: 2px;
+}
+.or-seperator {
+	margin-top: 32px;
+	text-align: center;
+	border-top: 1px solid #e0e0e0;
+}
+.or-seperator b {
+	color: #666;
+	padding: 0 8px;
+	width: 30px;
+	height: 30px;
+	font-size: 13px;
+	text-align: center;
+	line-height: 26px;
+	background: #fff;
+	display: inline-block;
+	border: 1px solid #e0e0e0;
+	border-radius: 50%;
+	position: relative;
+	top: -15px;
+	z-index: 1;
+}
+.navbar .action-buttons .dropdown-toggle::after {
+	display: none;
+}
+.form-check-label input {
+	position: relative;
+	top: 1px;
+}
+
+.carousel {
+	margin: 30px 0;
+    background: #ccc;
+  	position: relative;
+    box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+.carousel:after {
+	content: "";
+    position: absolute;
+    z-index: -1;
+    box-shadow: 0 0 20px rgba(0,0,0,0.8);
+    height: 60px;
+    bottom: 0px;
+    left: 10px;
+    right: 10px;
+    border-radius: 100px / 20px;
+}
+.carousel .item {
+    text-align: center;
+	overflow: hidden;
+    height: 500px;
+}
+.carousel .item img {
+	max-width: 100%;
+    margin: 0 auto; /* Align slide image horizontally center in Bootstrap v3 */
+}
+.carousel .carousel-control {
+	width: 50px;
+    height: 50px;
+    background: #000;
+    margin: auto 0;
+	opacity: 0.8;
+}
+.carousel .carousel-control:hover {
+	opacity: 0.9;
+}
+.carousel .carousel-control i {
+    font-size: 41px;
+}
+.carousel-caption h3, .carousel-caption p {
+	color: #fff;
+	display: inline-block;
+	font-family: 'Oswald', sans-serif;
+	text-shadow: none;
+	margin-bottom: 20px;
+}
+.carousel-caption h3 {
+	background: rgba(0,0,0,0.9);
+	padding: 12px 24px;
+	font-size: 40px;
+	text-transform: uppercase;
+}
+.carousel-caption p {
+	background: #8fc93c;
+	padding: 10px 20px;
+	font-size: 20px;
+	font-weight: 300;
+}
+.carousel-action {
+	padding: 10px 0 30px;
+}
+.carousel-action .btn {
+	min-height: 34px;
+	border-radius: 0;
+	margin: 3px;
+	min-width: 150px;
+	text-transform: uppercase;
+	font-family: 'Oswald', sans-serif;
+}
+.carousel-action .btn-primary {
+	border-color: #000;
+	background: none;
+	color: #000;
+}
+.carousel-action .btn-primary:hover {
+	background: #000;
+	color: #fff;
+}
+.carousel-action .btn-success {
+	background: #8fc93c;
+	border: none;
+}
+.carousel-action .btn-success:hover {
+	background: #87bd35;
+}
+.carousel-indicators li, .carousel-indicators li.active {
+	width: 11px;
+	height: 11px;
+	border-radius: 50%;
+	margin: 1px 6px;
+}
+.carousel-indicators li {
+	background: transparent;
+	border: 1px solid #fff;
+}
+.carousel-indicators li.active {
+	background: #8fc93c;
+	border-color: #8fc93c;
+}
+
+section#newarrival h2{
+	color: #716e6e;
+	font-family: Century Gothic;
+	font-size: 2em;
+	width: 980px;
+	/*height: 100px;*/
+	float: left;
+	border:2px solid #4d3155;
+	padding-left: 10px;
+}
+
+section#new_arrivals_1{
+	margin-top: 10px;
+	/*width: 1000px;
+	margin: auto;*/
+}
+
+
+section#new_arrivals_1 div.new1 img{
+	width: 300px;
+	height: 390px;
+	/*border:1px solid orange;*/
+}
+
+section#new_arrivals_1 div.new1{
+	width: 330px;
+	float: left;
+	/*margin-right: -10px;*/
+	font-family: candara;
+	text-align: center;
+	font-size: 1.3em;
+}
+
+footer{
+	background-color: #33cabb;
+	color: #fff;
+}
+
+section#footer_boxes .text p{
+	margin-left: 25px;
+	font-family: century Gothic;
+	font-size: 17px;
+	text-align: left;
+	margin-left: 50px;
+}
+
+footer p{
+	font-size: 1.5em;
+	font-family: avalon;
+	color: #fff;
+
+}
+
+
+footer input{
+	float: right;
+	margin-top: -55px;
+	margin-right: 170px;
+	height: 25px;
+	width: 240px;
+}
+
+footer button{
+	margin-right: 60px;
+	width: 100px;
+	float: right;
+	/*margin-right: px;*/
+	margin-top: -55px;
+	color: #000;
+	height: 30px;
+	border:none;
+	background-color: #fff;
+}
+
+footer button:hover{
+	background-color:#7ce2d8;
+	color: #000;
+}
+
+section#footer_boxes{
+	margin-top: 5px;
+	margin-left: 0px;
+	float: right;
+} 
+
+section#footer_boxes div.text{
+	width: 260px;
+	float: left;
+	margin-right: -10px;
+	font-family: Berlin Sans FB;
+	text-align: center;
+	font-size: 12px;
+}
+
+section#footer_boxes div p{
+	margin-top: 5px;
+}
+
+.form-control {
+	border-color: #eee;
+	min-height: 41px;
+	box-shadow: none !important;
+}
+.form-control:focus {
+	border-color: #5cd3b4;
+}
+.form-control, .btn {        
+	border-radius: 3px;
+}
+.signup-form {
+	width: 500px;
+	margin: 0 auto;
+	padding: 30px 0;
+}
+.signup-form h2 {
+	color: #333;
+	margin: 0 0 30px 0;
+	display: inline-block;
+	padding: 0 30px 10px 0;
+	border-bottom: 3px solid #5cd3b4;
+}
+.signup-form form {
+	color: #999;
+	border-radius: 3px;
+	margin-bottom: 15px;
+	background: #fff;
+	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+	padding: 30px;
+}
+.signup-form .form-group row {
+	margin-bottom: 20px;
+}
+.signup-form label {
+	font-weight: normal;
+	font-size: 14px;
+	line-height: 2;
+}
+.signup-form input[type="checkbox"] {
+	position: relative;
+	top: 1px;
+}
+.signup-form .btn {        
+	font-size: 16px;
+	font-weight: bold;
+	background: #5cd3b4;
+	border: none;
+	margin-top: 20px;
+	min-width: 140px;
+}
+.signup-form .btn:hover, .signup-form .btn:focus {
+	background: #41cba9;
+	outline: none !important;
+}
+.signup-form a {
+	color: #5cd3b4;
+	text-decoration: underline;
+}
+.signup-form a:hover {
+	text-decoration: none;
+}
+.signup-form form a {
+	color: #5cd3b4;
+	text-decoration: none;
+}	
+.signup-form form a:hover {
+	text-decoration: underline;
+}
+
+.modal-login {		
+	color: #636363;
+	width: 350px;
+}
+.modal-login .modal-content {
+	padding: 20px;
+	border-radius: 5px;
+	border: none;
+}
+.modal-login .modal-header {
+	border-bottom: none;   
+	position: relative;
+	justify-content: center;
+}
+.modal-login h4 {
+	text-align: center;
+	font-size: 26px;
+	margin: 30px 0 -15px;
+}
+.modal-login .form-control:focus {
+	border-color: #70c5c0;
+}
+.modal-login .form-control, .modal-login .btn {
+	min-height: 40px;
+	border-radius: 3px; 
+}
+.modal-login .close {
+	position: absolute;
+	top: -5px;
+	right: -5px;
+}	
+.modal-login .modal-footer {
+	background: #ecf0f1;
+	border-color: #dee4e7;
+	text-align: center;
+	justify-content: center;
+	margin: 0 -20px -20px;
+	border-radius: 5px;
+	font-size: 13px;
+}
+.modal-login .modal-footer a {
+	color: #999;
+}		
+.modal-login .avatar {
+	position: absolute;
+	margin: 0 auto;
+	left: 0;
+	right: 0;
+	top: -70px;
+	width: 95px;
+	height: 95px;
+	border-radius: 50%;
+	z-index: 9;
+	background: #60c7c1;
+	padding: 15px;
+	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+}
+.modal-login .avatar img {
+	width: 100%;
+}
+.modal-login.modal-dialog {
+	margin-top: 80px;
+}
+.modal-login .btn, .modal-login .btn:active {
+	color: #fff;
+	border-radius: 4px;
+	background: #60c7c1 !important;
+	text-decoration: none;
+	transition: all 0.4s;
+	line-height: normal;
+	border: none;
+}
+.modal-login .btn:hover, .modal-login .btn:focus {
+	background: #45aba6 !important;
+	outline: none;
+}
+.trigger-btn {
+	display: inline-block;
+	margin: 100px auto;
+}
+
+@media (min-width: 1200px){
+	.form-inline .input-group {
+		width: 300px;
+		margin-left: 30px;
+	}
+}
+@media (max-width: 768px){
+	.navbar .dropdown-menu.action-form {
+		width: 100%;
+		padding: 10px 15px;
+		background: transparent;
+		border: none;
+	}
+	.navbar .form-inline {
+		display: block;
+	}
+	.navbar .input-group {
+		width: 100%;
+	}
+}
