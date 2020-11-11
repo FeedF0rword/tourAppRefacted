@@ -5,15 +5,15 @@
 <div class="container-wrapper">
     <div class="container">
         <div class="page-header">
-            <h1>Update User!</h1>
-
+            <br>
+            <h3>Update User!</h3>
             <p class="lead">User Information:</p>
         </div>
-
+        <hr>
         <form:form action="${pageContext.request.contextPath}/admin/user/editUser" method="post"
                    commandName="customer" >
 
-        <h3>Login Information</h3>
+        <h4>Login Information</h4>
             <form:hidden path="customerId" value="${customer.customerId}" />
         <div class="form-group">
             <label for="username">Username</label>
@@ -38,8 +38,8 @@
                 </c:if>
             </form:select>
         </div>
-
-        <h3>User Information</h3>
+        <hr>
+        <h4>User Information</h4>
 
         <div class="form-group">
             <label for="firstname">First Name</label>
@@ -58,8 +58,8 @@
             <form:textarea class="form-control" id="medicalDetails" value="${customer.userInformation.medicalMd}"
                            rows="3" path="userInformation.medicalMd" />
         </div>
-
-        <h3>User Address</h3>
+        <hr>
+        <h4>User Address</h4>
 
         <div class="form-group">
             <label for="addressNumber">Number</label>
@@ -117,8 +117,8 @@
                 </div>
             </div>
         </div>
-
-        <h3>Emergency Contact</h3>
+        <hr>
+        <h4>Emergency Contact</h4>
 
         <div class="form-group">
             <div class="form-row">
@@ -152,17 +152,17 @@
                            value="${customer.userInformation.emergencyContactAddress}"
                            rows="3" path="userInformation.emergencyContactAddress" />
         </div>
-
-        <h3>Insurance Information</h3>
+        <hr>
+        <h4>Insurance Information</h4>
         <div class="form-row">
-            <div class="form-group col">
+            <div class="form-group col-md-4">
                 <label for="insuranceNo">Insurance Number</label>
                 <form:input type="text" class="form-control" path="insuranceInformation.insuranceNo"
                             value="${customer.insuranceInformation.insuranceNo}"
                             id="insuranceNo" name="insuranceNo"/>
             </div>
 
-            <div class="form-group col-md-6">
+            <div class="form-group col-md-4">
                 <label for="datepicker">Insurance Expiry Date</label>
                 <form:input type="text" class="form-control"
                             value="${customer.insuranceInformation.expiry_date}"
@@ -170,7 +170,7 @@
                             id="datepicker"/>
             </div>
 
-            <div class="form-group col-md-6">
+            <div class="form-group col-md-4">
                 <label for="insuranceVerified">Insurance Verified</label>
                 <form:select class="form-control"
                              path="insuranceInformation.insuranceVerified" id="insuranceVerified"
@@ -181,11 +181,11 @@
                 </form:select>
             </div>
         </div>
-
-        <br><br>
-        <input type="submit" value="submit" class="btn btn-default">
-        <a href="<c:url value="/" />" class="btn btn-default">Cancel</a>
+        <hr>
+        <input type="submit" value="Submit" class="btn btn-success">
+        <a href="<c:url value="/" />" class="btn btn-warning">Cancel</a>
         </form:form>
+    </div>
+</div>
 
-
-        <%@include file="/WEB-INF/views/template/footer.jsp" %>
+<%@include file="/WEB-INF/views/template/footer.jsp" %>

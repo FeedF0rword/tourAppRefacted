@@ -64,11 +64,12 @@ public class CustomerDaoImpl implements CustomerDao{
         Customer customer = getCustomerById(Id);
         Users user = getUserByUsername(customer.getUsername());
         user.setEnabled(false);
-        session.update(user);
+
 //        Object persistentInstance = session.load(Customer.class, Id);
 //        if (persistentInstance != null) {
 //            session.delete(persistentInstance);
 //        }
+        session.update(user);
         session.flush();
     }
 

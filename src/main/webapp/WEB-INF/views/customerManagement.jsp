@@ -5,11 +5,11 @@
 <div class="container-wrapper">
     <div class="container">
         <div class="page-header">
-            <h1>User List</h1>
-
-            <p class="lead">All the Users!</p>
+            <br>
+            <h3>User List</h3>
+            <p class="lead">All the Users Registered!</p>
         </div>
-
+        <hr>
         <table class="table table-striped table-hover">
             <thead>
             <tr class="bg-success">
@@ -28,27 +28,30 @@
                     <td>${user.userInformation.surname}</td>
                     <td>
                         <c:if test="${pageContext.request.isUserInRole('ROLE_LEADER')}">
-                            <a href="<spring:url value="/rideLeader/user/viewUser/${user.customerId}" />"
-                            ><span class="glyphicon glyphicon-info-sign"></span></a>
+                            <a class="btn btn-sm btn-info"
+                               href="<spring:url value="/rideLeader/user/viewUser/${user.customerId}" />">
+                                View</a>
                         </c:if>
 
                         <c:if test="${pageContext.request.isUserInRole('ROLE_ADMIN')}">
                             <a href="<spring:url value="/admin/user/viewUser/${user.customerId}" />"
-                            ><span class="glyphicon glyphicon-info-sign"></span></a>
+                            class="btn btn-sm btn-info">
+                                View</a>
 
                             <a href="<spring:url value="/admin/user/editUser/${user.customerId}" />"
-                            ><span class="glyphicon glyphicon-pencil"></span></a>
+                            class="btn btn-sm btn-warning">
+                                Edit</a>
 
                             <a href="<spring:url value="/admin/user/deleteUser/${user.customerId}" />"
-                            ><span class="glyphicon glyphicon-remove"></span></a>
+                               class="btn btn-sm btn-danger">Disable</a>
                         </c:if>
                     </td>
                 </tr>
             </c:forEach>
         </table>
-
-        <a href="<spring:url value="/register" />" class="btn btn-primary">Add User</a>
-
-
+        <hr>
+        <a href="<spring:url value="/register" />" class="btn btn-success">Add User</a>
+    </div>
+</div>
 
 <%@include file="/WEB-INF/views/template/footer.jsp" %>

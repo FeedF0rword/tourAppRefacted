@@ -5,9 +5,12 @@ import com.tourApp.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
+import javax.validation.Valid;
 
 @Controller
 public class RegisterController {
@@ -31,7 +34,10 @@ public class RegisterController {
     }
 
     @RequestMapping(value = "/register", method = RequestMethod.POST)
-    public String registerCustomerPost(@ModelAttribute("customer") Customer customer, Model model) {
+    public String registerCustomerPost(@Valid @ModelAttribute("customer") Customer customer, BindingResult result) {
+        if(result.hasErrors()) {
+            return "registerUser";
+        }
 
         customer.setEnabled(true);
         customerService.addCustomer(customer);

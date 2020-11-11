@@ -11,67 +11,71 @@
 
     <title>Mortercycle Tour App</title>
 
+    <!-- Main CSS -->
+    <link href="<c:url value="/resources/css/modern-business.css" />" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+          integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+<%--    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Varela+Round">--%>
+<%--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">--%>
+<%--    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">--%>
+<%--    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">--%>
     <!-- Angular JS -->
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.1/angular.min.js" > </script>
+    <%--    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.1/angular.min.js" > </script>--%>
 
     <!-- Bootstrap core CSS -->
-    <link href="<c:url value="/resources/css/bootstrap.min.css" />" rel="stylesheet">
+    <%--    <link href="<c:url value="/resources/css/bootstrap.min.css" />" rel="stylesheet">--%>
 
-    <!-- Carousel CSS -->
-    <link href="<c:url value="/resources/css/carousel.css" />" rel="stylesheet">
-
-    <!-- Main CSS -->
-    <link href="<c:url value="/resources/css/style.css" />" rel="stylesheet">
-
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Varela+Round">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <%--    <!-- Carousel CSS -->--%>
+    <%--    <link href="<c:url value="/resources/css/carousel.css" />" rel="stylesheet">--%>
 
 </head>
 <!-- NAVBAR
 ================================================== -->
 <body>
-<div class="container">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a href="<c:url value="/"/>" class="navbar-brand">Motorcycle<b>Tours</b></a>
-        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+<%----%>
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="<c:url value="/"/>">Motorcycle<b>Tours</b></a>
+        <button class="navbar-toggler navbar-toggler-right" type="button"
+                data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <!-- Collection of nav links, forms, and other content for toggling -->
-        <div id="navbarCollapse" class="collapse navbar-collapse justify-content-start">
-            <div class="navbar-nav">
-                <a href="<c:url value="/"/>" class="nav-item nav-link">Home</a>
-                <a href="<c:url value="/rideout/rideoutList" />" class="nav-item nav-link">Rideouts</a>
-            </div>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a href="<c:url value="/"/>" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="<c:url value="/rideout/rideoutList" />" class="nav-link">Rideouts</a>
+                </li>
+            </ul>
             <div class="navbar-nav ml-auto ">
                 <c:if test="${pageContext.request.userPrincipal.name != null}">
-                    <a>Welcome: ${pageContext.request.userPrincipal.name}</a>
-                    <a href="<c:url value="/j_spring_security_logout" />">Logout</a>
+                    <a  class="nav-link">Welcome: ${pageContext.request.userPrincipal.name}</a>
+                    <a  class="nav-link" href="<c:url value="/j_spring_security_logout" />">Logout</a>
                     <%-- check user role --%>
                     <c:if test="${pageContext.request.isUserInRole('ROLE_USER')}">
-                        <a href="<c:url value="/customer/viewUser" />">User Details</a>
-                        <a href="<c:url value="/customer/cart" />">Registered Rideouts</a>
+                        <a  class="nav-link" href="<c:url value="/customer/viewUser" />">User Details</a>
+                        <a  class="nav-link" href="<c:url value="/customer/cart" />">Registered Rideouts</a>
                     </c:if>
 
                     <c:if test="${pageContext.request.isUserInRole('ROLE_ADMIN')}">
-                        <a href="<c:url value="/admin" />">Admin</a>
+                        <a  class="nav-link" href="<c:url value="/admin" />">Admin</a>
                     </c:if>
 
                     <c:if test="${pageContext.request.isUserInRole('ROLE_LEADER')}">
-                        <a href="<c:url value="/rideLeader" />">Ride Leader</a>
+                        <a  class="nav-link" href="<c:url value="/rideLeader" />">Ride Leader</a>
                     </c:if>
 
                 </c:if>
                 <c:if test="${pageContext.request.userPrincipal.name  == null}">
-                    <a href="<c:url value="/login/" />">Login</a>
-                    <a href="<c:url value="/register" />">Register</a>
+                    <a  class="nav-link" href="<c:url value="/login/" />">Login</a>
+                    <a  class="nav-link" href="<c:url value="/register" />">Register</a>
                 </c:if>
-
             </div>
         </div>
-    </nav>
-</div>
+    </div>
+</nav>

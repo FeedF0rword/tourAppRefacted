@@ -5,14 +5,14 @@
 <div class="container-wrapper">
     <div class="container">
         <div class="page-header">
-            <h1>Update User!</h1>
-
+            <h3>Update User!</h3>
             <p class="lead">View User Information:</p>
+            <hr>
         </div>
 
         <form:form action="#" commandName="user" >
 
-        <h3>Login Information</h3>
+        <h4>Login Information</h4>
         <div class="form-group">
             <label for="username">Username</label>
             <form:input readonly="true"
@@ -25,8 +25,8 @@
             <form:input readonly="true" path="role" value="${user.role}"
                         id="role" class="form-Control"/>
         </div>
-
-        <h3>User Information</h3>
+        <hr>
+        <h4>User Information</h4>
 
         <div class="form-group">
             <label for="firstname">First Name</label>
@@ -49,8 +49,8 @@
                            value="${user.userInformation.medicalMd}"
                            rows="3" path="userInformation.medicalMd" />
         </div>
-
-        <h3>User Address</h3>
+        <hr>
+        <h4>User Address</h4>
 
         <div class="form-group">
             <label for="addressNumber">Number</label>
@@ -116,8 +116,8 @@
                 </div>
             </div>
         </div>
-
-        <h3>Emergency Contact</h3>
+        <hr>
+        <h4>Emergency Contact</h4>
 
         <div class="form-group">
             <div class="form-row">
@@ -155,8 +155,8 @@
                            value="${user.userInformation.emergencyContactAddress}"
                            rows="3" path="userInformation.emergencyContactAddress" />
         </div>
-
-        <h3>Insurance Information</h3>
+        <hr>
+        <h4>Insurance Information</h4>
         <div class="form-row">
             <div class="form-group col">
                 <label for="insuranceNo">Insurance Number</label>
@@ -185,17 +185,16 @@
                             id="validationInsurance"/>
             </div>
         </div>
-
-        <br><br>
-        <a href="<c:url value="/" />" class="btn btn-default">Back To Home</a>
+        <hr>
+        <a href="<c:url value="/" />" class="btn btn-warning">Back To Home</a>
         </form:form>
 
         <c:if test="${pageContext.request.userPrincipal.name == user.username}">
 
         <a href="<c:url value="/customer/editUser/${user.customerId}" />"
-           class="btn btn-default"> EDIT Details </a>
+           class="btn btn-success"> EDIT Details </a>
 
         </c:if>
-
-
-        <%@include file="/WEB-INF/views/template/footer.jsp" %>
+    </div>
+</div>
+<%@include file="/WEB-INF/views/template/footer.jsp" %>

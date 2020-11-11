@@ -5,24 +5,24 @@
 <div class="container-wrapper">
     <div class="container">
         <div class="page-header">
-            <h1>Register Customer</h1>
-
+            <br>
+            <br>
+            <h3>Sign Up Here</h3>
             <p class="lead">Please fill in your information below:</p>
         </div>
-
+        <hr>
         <form:form action="${pageContext.request.contextPath}/register" method="post"
                    commandName="customer" >
 
-        <h3>Login Information</h3>
-
+        <h4>Login Information</h4>
 
         <div class="form-group">
-            <label for="username">Username</label>
+            <label for="username">Username</label>  <form:errors path="username" cssStyle="color: #ff0000;" />
             <form:input path="username" id="username" class="form-Control"/>
         </div>
 
         <div class="form-group">
-            <label for="password">Password</label>
+            <label for="password">Password</label> <form:errors path="password" cssStyle="color: #ff0000;" />
             <form:password path="password" id="password" class="form-Control"/>
         </div>
 
@@ -38,8 +38,8 @@
 
             </form:select>
         </div>
-
-        <h3>User Information</h3>
+        <hr>
+        <h4>User Information</h4>
 
         <div class="form-group">
             <label for="firstname">First Name</label>
@@ -56,8 +56,8 @@
             <form:textarea class="form-control" id="medicalDetails"
                            rows="3" path="userInformation.medicalMd" />
         </div>
-
-        <h3>User Address</h3>
+        <hr>
+        <h4>User Address</h4>
 
         <div class="form-group">
             <label for="addressNumber">Number</label>
@@ -105,8 +105,8 @@
                 </div>
             </div>
         </div>
-
-        <h3>Emergency Contact</h3>
+        <hr>
+        <h4>Emergency Contact</h4>
 
         <div class="form-group">
             <div class="form-row">
@@ -136,8 +136,8 @@
             <form:textarea class="form-control" id="emergencyAddress"
                            rows="3" path="userInformation.emergencyContactAddress" />
         </div>
-
-        <h3>Insurance Information</h3>
+        <hr>
+        <h4>Insurance Information</h4>
         <div class="form-row">
             <div class="form-group col">
                 <label for="insuranceNo">Insurance Number</label>
@@ -150,11 +150,11 @@
                             id="datepicker"/>
             </div>
         </div>
-
-        <br><br>
-        <input type="submit" value="submit" class="btn btn-default">
-        <a href="<c:url value="/" />" class="btn btn-default">Cancel</a>
+        <br>
+        <input type="submit" value="Submit" class="btn btn-success">
+        <a href="<c:url value="/" />" class="btn btn-warning">Cancel</a>
         </form:form>
+    </div>
+</div>
 
-
-        <%@include file="/WEB-INF/views/template/footer.jsp" %>
+<%@include file="/WEB-INF/views/template/footer.jsp" %>

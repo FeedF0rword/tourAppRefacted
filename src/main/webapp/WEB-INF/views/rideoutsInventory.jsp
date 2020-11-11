@@ -6,9 +6,8 @@
 <div class="container-wrapper">
     <div class="container">
         <div class="page-header">
-            <h1>Rideouts List Page</h1>
-
-            <p class="lead">This Lists All the Rideouts!</p>
+            <h3>Rideouts List Page</h3>
+            <p >This Lists All the Rideouts!</p>
         </div>
 
         <table class="table table-striped table-hover">
@@ -27,27 +26,35 @@
                     <td>${rideout.startDate}</td>
                     <td>
                         <a href="<spring:url value="/rideout/viewRideout/${rideout.rideoutId}" />"
-                        ><span class="glyphicon glyphicon-info-sign"></span></a>
+                        class="btn btn-sm btn-info">
+                            View
 
                         <c:if test="${pageContext.request.isUserInRole('ROLE_LEADER')}">
                             <a href="<spring:url value="/rideLeader/rideout/editRideout/${rideout.rideoutId}" />"
-                            ><span class="glyphicon glyphicon-pencil"></span></a>
+                            class="btn btn-sm btn-warning">
+                                Edit
+                            </a>
                         </c:if>
 
                         <c:if test="${pageContext.request.isUserInRole('ROLE_ADMIN')}">
                             <a href="<spring:url value="/admin/rideout/editRideout/${rideout.rideoutId}" />"
-                            ><span class="glyphicon glyphicon-pencil"></span></a>
-
+                            class="btn btn-sm btn-warning">
+                                Edit
+                            </a>
                             <a href="<spring:url value="/admin/rideout/deleteRideout/${rideout.rideoutId}" />"
-                            ><span class="glyphicon glyphicon-remove"></span></a>
+                            class="btn btn-sm btn-danger">
+                                Delete
+                            </a>
                         </c:if>
                     </td>
                 </tr>
             </c:forEach>
         </table>
-
         <c:if test="${pageContext.request.isUserInRole('ROLE_ADMIN')}">
             <a href="<spring:url value="/admin/rideout/addRideout" />" class="btn btn-primary">Add Rideout</a>
         </c:if>
+    </div>
 
-        <%@include file="/WEB-INF/views/template/footer.jsp" %>
+</div>
+
+<%@include file="/WEB-INF/views/template/footer.jsp" %>
