@@ -8,6 +8,8 @@ public interface RideoutDao {
 
     List<Rideout> getRideoutsList();
 
+    List<Rideout> getFutureRideout();
+
     Rideout getRideoutById(int id);
 
     void addRideout(Rideout rideout);

@@ -35,6 +35,16 @@ public class RideoutDaoImpl implements RideoutDao {
         return rideoutList;
     }
 
+    public List<Rideout> getFutureRideout() {
+        Session session = sessionFactory.getCurrentSession();
+        Query query = session.createQuery("from Rideout where rideoutStatus= ?");
+        query.setString(0, "PUBLISHED");
+        List<Rideout> rideoutList = query.list();
+        session.flush();
+
+        return rideoutList;
+    }
+
     public void addRideout(Rideout rideout) {
         Session session = sessionFactory.getCurrentSession();
         session.saveOrUpdate(rideout);

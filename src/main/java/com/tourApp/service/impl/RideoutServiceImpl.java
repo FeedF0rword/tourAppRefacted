@@ -22,6 +22,8 @@ public class RideoutServiceImpl implements RideoutService {
         return rideoutDao.getRideoutsList();
     }
 
+    public List<Rideout> getFutureRideout() { return rideoutDao.getFutureRideout();  }
+
     public void addRideout(Rideout rideout) {
         rideoutDao.addRideout(rideout);
     }

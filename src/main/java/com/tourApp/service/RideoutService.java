@@ -8,6 +8,8 @@ public interface RideoutService {
 
     List<Rideout> getRideoutList();
 
+    List<Rideout> getFutureRideout();
+
     Rideout getRideoutById(int id);
 
     void addRideout(Rideout rideout);

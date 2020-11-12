@@ -19,7 +19,7 @@ public class RideoutController {
 
     @RequestMapping("/rideoutList")
     public String getProducts(Model model) {
-        List<Rideout> rideouts = rideoutService.getRideoutList();
+        List<Rideout> rideouts = rideoutService.getFutureRideout();
         model.addAttribute("rideouts", rideouts);
 
         return "rideoutList";
