@@ -57,6 +57,22 @@ public class RideLeaderController {
         return "viewUser";
     }
 
+    @RequestMapping("/user/verifyUser/{id}")
+    public String verifyUserInsurance(@PathVariable("id") int id) throws IOException {
+        Customer customer =  customerService.getCustomerById(id);
+        customer.getInsuranceInformation().setInsuranceVerified(true);
+        customerService.updateCustomer(customer);
+        return "redirect:/rideLeader/user/viewUser/"+id;
+    }
+
+    @RequestMapping("/user/unVerifyUser/{id}")
+    public String unVerifyUserInsurance(@PathVariable("id") int id) throws IOException {
+        Customer customer =  customerService.getCustomerById(id);
+        customer.getInsuranceInformation().setInsuranceVerified(false);
+        customerService.updateCustomer(customer);
+        return "redirect:/rideLeader/user/viewUser/"+id;
+    }
+
     @RequestMapping("/rideout/editRideout/{id}")
     public String editRideout(@PathVariable("id") int id, Model model) {
         Rideout rideout = rideoutService.getRideoutById(id);

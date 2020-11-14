@@ -190,10 +190,16 @@
         </form:form>
 
         <c:if test="${pageContext.request.userPrincipal.name == user.username}">
-
         <a href="<c:url value="/customer/editUser/${user.customerId}" />"
            class="btn btn-success"> EDIT Details </a>
+        </c:if>
 
+        <c:if test="${pageContext.request.isUserInRole('ROLE_LEADER')}">
+            <a href="<c:url value="/rideLeader/user/verifyUser/${user.customerId}" />"
+               class="btn btn-info"> Verify Insurance </a>
+
+            <a href="<c:url value="/rideLeader/user/unVerifyUser/${user.customerId}" />"
+               class="btn btn-danger"> Remove Insurance Verification</a>
         </c:if>
     </div>
 </div>

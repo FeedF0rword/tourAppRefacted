@@ -75,6 +75,34 @@
                             </table>
                         </div>
                 </c:if>
+
+<%--               if Ride leader--%>
+                <c:if test="${pageContext.request.isUserInRole('ROLE_LEADER')}">
+                    <div class="col-md-12">
+                        <table class="table table-striped table-hover">
+                            <thead>
+                            <tr class="bg-success">
+                                <th>Rider Firstname</th>
+                                <th>Rider Surname</th>
+                                <th>Rider Insurance Verified</th>
+                                <th>Actions</th>
+                            </tr>
+                            </thead>
+                            <c:forEach items="${rideout.rideoutItemList}" var="rideoutItem">
+                                <tr>
+                                    <td>${rideoutItem.cart.customer.userInformation.firstname}</td>
+                                    <td>${rideoutItem.cart.customer.userInformation.surname}</td>
+                                    <td>${rideoutItem.cart.customer.insuranceInformation.insuranceVerified}</td>
+                                    <td>
+                                        <a href="<spring:url value="/rideLeader/user/viewUser/${rideoutItem.cart.customer.customerId}" />">
+                                            View
+                                            <span class="glyphicon glyphicon-info-sign"></span></a>
+                                    </td>
+                                </tr>
+                            </c:forEach>
+                        </table>
+                    </div>
+                </c:if>
             </div>
             <div class="row">
                 <p>
