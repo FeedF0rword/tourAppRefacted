@@ -8,12 +8,18 @@ https://github.com/FeedF0rword/MortercycleRideTours.git
 https://youtu.be/n_qKsDP-4zs
 
 ### Website Tutorial
-Register User and Login and Edit Details:
-•	https://youtu.be/lZJmI6xuvIk
+<li>
+  Register User and Login and Edit Details:
+  •	https://youtu.be/lZJmI6xuvIk
+</li>
+<li>
 Register for rideouts, View Registed Rideouts, Admin Functions:
-•	https://youtu.be/GzzexgzkQQc
+•	https://youtu.be/GzzexgzkQQc  
+</li>
+<li>
 Admin Functions, Ride Leader Functions:
-•	https://youtu.be/AEka4C1AAlk
+•	https://youtu.be/AEka4C1AAlk  
+</li>
 
 <p> Downlord this file and use the tomcat server to deploy the war file
 </p>
