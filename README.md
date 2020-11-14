@@ -1,17 +1,58 @@
 # tourAppRefacted
-BCAS SSD Final Project Completed Version with JSP
+BCAS SSD Final Project Completed Version with JSP. This is a website created uinsg Java Spring boot technchnologies to ton on a tomcat server.
 
-###Previus Github Repo
+### Previus Github Repo
 https://github.com/FeedF0rword/MortercycleRideTours.git
 
-###How to Rin the WAR file on local computer
+###How to Run the WAR file on local computer
+https://youtu.be/n_qKsDP-4zs
+
+### Website Tutorial
+Register User and Login and Edit Details:
+•	https://youtu.be/lZJmI6xuvIk
+Register for rideouts, View Registed Rideouts, Admin Functions:
+•	https://youtu.be/GzzexgzkQQc
+Admin Functions, Ride Leader Functions:
+•	https://youtu.be/AEka4C1AAlk
 
 <p> Downlord this file and use the tomcat server to deploy the war file
 </p>
 https://drive.google.com/file/d/1s3IIGqxPw5LnIIM6OChhgLyBcxAoRv7D/view?usp=sharing The System WAR File
 
 
-###System Documentation
+## Folder Structure
+### diagrams
+<p>This folder holds all the diagrams created for the website. This includes
+<ul>
+  <li> Rich Picture</li>
+  <li> ER Diagram</li>
+  <li> Class Diagram</li>
+  <li> Robustness Diagram</li>  
+</ul>
+</p>
 
-
+### lib
+<p> This inculdes all the libraries and frmeworks used for the website.
+  </p>
+  
+### src
+<p>This fiolder contains the main classes of the website. THis includes these folders that are separated by their functions
+  <ul>
+  <li> Controller</li>
+  <li> DAO</li>
+  <li> Services</li>
+  <li> Model</li> 
+  <li> Web App</li> 
+  <li> Test</li>  
+</ul>
+</p>
+### target
+<p>
+  This folder contains the deployed files of the WAR file.
+  </p>
+  
+### warFile
+<p>
+  This Folder Contains all the relevent software and the deployable WAR File
+</p>
 
