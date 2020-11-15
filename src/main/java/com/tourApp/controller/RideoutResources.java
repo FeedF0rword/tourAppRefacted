@@ -13,6 +13,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.web.bind.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -69,12 +70,30 @@ public class RideoutResources {
 
     }
 
-    @RequestMapping(value = "/{cartId}", method = RequestMethod.DELETE)
-    @ResponseStatus(value = HttpStatus.NO_CONTENT)
-    public void clearCart(@PathVariable(value = "cartId") int cartId) {
-        RideoutCart rideoutCart = registerRideoutService.getRegistrationById(cartId);
-        rideoutItemService.removeAllRegisteredRideouts(rideoutCart);
-    }
+//    @RequestMapping(value = "/addFeedback/{rideoutId}")
+//    public String addFeedback (@PathVariable(value = "rideoutId") int rideoutId, Model model) {
+//        RideoutItem rideoutItem = rideoutItemService.getRideoutItemByRideoutId(rideoutId);
+//        String feed = rideoutItem.getFeedback();
+//        model.addAttribute("rideout", rideoutItem);
+//        return "addFeedback";
+//
+//    }
+//
+//    @RequestMapping(value = "/addFeedback", method = RequestMethod.POST)
+//    public String addFeedbackPOST (@ModelAttribute("rideout") RideoutItem rideoutItem) {
+//        rideoutItemService.addRideoutItem(rideoutItem);
+//        return "redirect:/customer/cart";
+//    }
+//
+//    @RequestMapping(value = "/removeFeedback/{rideoutId}")
+//    public String removeFeedback (@PathVariable(value = "rideoutId") int rideoutId) {
+//        RideoutItem rideoutItem = rideoutItemService.getRideoutItemByRideoutId(rideoutId);
+//        rideoutItem.setFeedback("");
+//        rideoutItemService.addRideoutItem(rideoutItem); //add updates the filed if there is an ID
+//        return "redirect:/customer/cart";
+//
+//    }
+
 
     @ExceptionHandler(IllegalArgumentException.class)
     @ResponseStatus(value = HttpStatus.BAD_REQUEST, reason = "Illegal request, please verify your payload.")

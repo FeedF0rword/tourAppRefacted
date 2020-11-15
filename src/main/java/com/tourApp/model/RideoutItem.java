@@ -23,6 +23,8 @@ public class RideoutItem implements Serializable{
     @JoinColumn(name = "rideoutId")
     private Rideout rideout;
 
+    private String feedback;
+
 
     public int getCartItemId() {
         return cartItemId;
@@ -48,4 +50,11 @@ public class RideoutItem implements Serializable{
         this.rideout = rideout;
     }
 
+    public String getFeedback() {
+        return feedback;
+    }
+
+    public void setFeedback(String feedback) {
+        this.feedback = feedback;
+    }
 }

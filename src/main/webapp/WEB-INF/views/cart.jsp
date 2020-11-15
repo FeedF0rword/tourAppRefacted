@@ -16,6 +16,9 @@
         </section>
         <section class="container">
             <table class="table table-hover">
+                <div class="title">
+                    Future Rideouts
+                </div>
                 <thead>
                     <tr>
                         <th>Rideout Title</th>
@@ -26,6 +29,7 @@
                     </tr>
                 </thead>
                 <c:forEach items="${registrations.cartItems}" var="rideout">
+                    <c:if test="${rideout.product.rideoutStatus == 'PUBLISHED'}">
                     <tr>
                         <td>${rideout.product.rideoutTitle}</td>
                         <td>${rideout.product.maxRiders}</td>
@@ -39,8 +43,43 @@
                                class="btn btn-sm btn-danger">Remove</a>
                         </td>
                     </tr>
+                    </c:if>
                 </c:forEach>
             </table>
+
+            <table class="table table-hover">
+                <div class="title">
+                    Finished Rideouts
+                </div>
+                <thead>
+                <tr>
+                    <th>Rideout Title</th>
+                    <th>Max Riders</th>
+                    <th>Start Date</th>
+                    <th>Ride Leader</th>
+                    <th>Action</th>
+                </tr>
+                </thead>
+                <c:forEach items="${registrations.cartItems}" var="rideout">
+                        <c:if test="${rideout.product.rideoutStatus == 'FINISHED'}">
+                        <tr>
+                            <td>${rideout.product.rideoutTitle}</td>
+                            <td>${rideout.product.maxRiders}</td>
+                            <td>${rideout.product.startDate}</td>
+                            <td>${rideout.product.rideLeader}</td>
+                            <td>
+                                <a href="<spring:url value="/rideout/viewRideout/${rideout.product.rideoutId}" />"
+                                   class="btn btn-sm btn-success">View</a>
+
+                                <a href="<spring:url value="/resources/addFeedback/${rideout.product.rideoutId}" />"
+                                   disabled="true" class="btn btn-sm btn-danger">addFeedback</a>
+                            </td>
+                        </tr>
+                    </c:if>
+                </c:forEach>
+
+            </table>
+
             <a href="<spring:url value="/" />" class="btn btn-info">Go Back to Home</a>
         </section>
 
