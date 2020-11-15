@@ -6,7 +6,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 @SpringBootTest
 public class tourAppTests {
     @Test
-    void contextLoads() {
+    public void contextLoads() {
+
     }
 }
 
