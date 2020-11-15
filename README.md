@@ -1,4 +1,4 @@
-# tourAppRefacted
+# Mortorcycle Tour App (Refacted)
 BCAS SSD Final Project Completed Version with JSP. This is a website created uinsg Java Spring boot technchnologies to ton on a tomcat server.
 
 ### Previus Github Repo
@@ -8,7 +8,7 @@ https://github.com/FeedF0rword/MortercycleRideTours.git
 </p>
 The System WAR File: https://drive.google.com/file/d/152p9g39KfuFpElsYvU3oLleOg0M-LmEJ/view?usp=sharing 
 
-###How to Run the WAR file on local computer
+### How to Run the WAR file on local computer
 https://youtu.be/n_qKsDP-4zs
 
 ### Website Tutorial
