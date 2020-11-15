@@ -7,6 +7,8 @@ https://github.com/FeedF0rword/MortercycleRideTours.git
 <p> Downlord this file and use the tomcat server to deploy the war file
 </p>
 The System WAR File: https://drive.google.com/file/d/152p9g39KfuFpElsYvU3oLleOg0M-LmEJ/view?usp=sharing 
+<br>
+The setup files for the database manager and tomcat server are in the warFile Folder
 
 ### How to Run the WAR file on local computer
 https://youtu.be/n_qKsDP-4zs
