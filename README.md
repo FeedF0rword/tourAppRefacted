@@ -21,9 +21,14 @@ Admin Functions, Ride Leader Functions:
 •	https://youtu.be/AEka4C1AAlk  
 </li>
 
+<li>
+Additional Functions:
+•	https://youtu.be/PoyLg8VhZlA
+</li>
+<hr>
 <p> Downlord this file and use the tomcat server to deploy the war file
 </p>
-https://drive.google.com/file/d/1s3IIGqxPw5LnIIM6OChhgLyBcxAoRv7D/view?usp=sharing The System WAR File
+https://drive.google.com/file/d/1V9-bROsCTnDS-gG3iyhITUs92X6oAEJK/view?usp=sharing The System WAR File
 
 
 ## Folder Structure
