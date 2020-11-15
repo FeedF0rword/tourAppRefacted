@@ -3,6 +3,10 @@ BCAS SSD Final Project Completed Version with JSP. This is a website created uin
 
 ### Previus Github Repo
 https://github.com/FeedF0rword/MortercycleRideTours.git
+<br>
+<p> Downlord this file and use the tomcat server to deploy the war file
+</p>
+The System WAR File: https://drive.google.com/file/d/152p9g39KfuFpElsYvU3oLleOg0M-LmEJ/view?usp=sharing 
 
 ###How to Run the WAR file on local computer
 https://youtu.be/n_qKsDP-4zs
@@ -26,10 +30,6 @@ Additional Functions:
 •	https://youtu.be/PoyLg8VhZlA
 </li>
 <hr>
-<p> Downlord this file and use the tomcat server to deploy the war file
-</p>
-https://drive.google.com/file/d/1V9-bROsCTnDS-gG3iyhITUs92X6oAEJK/view?usp=sharing The System WAR File
-
 
 ## Folder Structure
 ### diagrams
